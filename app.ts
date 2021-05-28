@@ -7,36 +7,62 @@
 
 // === Смысл делать три класса Cat, Bird, Fish, если можно создать класс Animal и сделать его экземпляры Cat, Bird, Fish.===
 
-// interface IAnimal {
-// 	type: string;
-// 	size: string;
-// 	animalInfo(animalType: string, animalSize: string): string;
-// }
+interface IAnimal {
+	type: string;
+	size: string;
+	animalInfo(): string;
+}
 
-// class Animal implements IAnimal {
-// 	type: string;
-// 	size: string;
+class Cat implements IAnimal {
+	type: string;
+	size: string;
 
-// 	constructor(animalType: string, animalSize: string) {
-// 		this.type = animalType;
-// 		this.size = animalSize;
-// 	}
-// 	animalInfo(animalType: string, animalSize: string): string {
-// 		return `type: ${animalType}, size: ${animalSize}`;
-// 	}
-// }
+	constructor(animalType: string, animalSize: string) {
+		this.type = animalType;
+		this.size = animalSize;
+	}
+	animalInfo(): string {
+		return `type: ${this.type}, size: ${this.size}`;
+	}
+}
 
-// let cat = new Animal('run', 'middle');
-// console.log('тип cat: ', cat.type, ', размер cat: ', cat.size);
-// console.log(cat.animalInfo('run', 'middle'));
+let cat = new Cat('run', 'middle');
+console.log('тип cat: ', cat.type, ', размер cat: ', cat.size);
+console.log(cat.animalInfo());
 
-// let bird = new Animal('fly', 'small');
-// console.log('тип bird: ', bird.type, ', тип bird: ', bird.size);
-// console.log(bird.animalInfo('run', 'small'));
+class Bird implements IAnimal {
+	type: string;
+	size: string;
 
-// let fish = new Animal('sweem', 'small');
-// console.log('тип fish: ', fish.type, ', тип fish: ', fish.size);
-// console.log(fish.animalInfo('sweem', 'small'));
+	constructor(animalType: string, animalSize: string) {
+		this.type = animalType;
+		this.size = animalSize;
+	}
+	animalInfo(): string {
+		return `type: ${this.type}, size: ${this.size}`;
+	}
+}
+
+let bird = new Bird('fly', 'small');
+console.log('тип bird: ', bird.type, ', тип bird: ', bird.size);
+console.log(bird.animalInfo());
+
+class Fish implements IAnimal {
+	type: string;
+	size: string;
+
+	constructor(animalType: string, animalSize: string) {
+		this.type = animalType;
+		this.size = animalSize;
+	}
+	animalInfo(): string {
+		return `type: ${this.type}, size: ${this.size}`;
+	}
+}
+
+let fish = new Fish('sweem', 'small');
+console.log('тип fish: ', fish.type, ', тип fish: ', fish.size);
+console.log(fish.animalInfo());
 
 // // 2) создать абстрактный класс Shape:
 // // добавить абстрактные методы perimeter() и area()
