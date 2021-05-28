@@ -1,243 +1,106 @@
-// class User {
-// 	name: string;
-// 	constructor(_name: string) {
-// 		this.name = _name;
+// HW
+// 1) написать интерфейс Animal который описывает:
+// тип движения животного(плавает, ходит, бегает) типа стринг
+// что говорит тип стринг
+// и функцию которая возвращает информацию о животном
+// создать три класса Cat, Bird, Fish и имплементировать для каждого интерфейс Animal
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+// interface IAnimal {
+// 	type: string;
+// 	size: string;
+// 	animalInfo(animalType: string, animalSize: string): string;
+// }
+// class Animal implements IAnimal {
+// 	type: string;
+// 	size: string;
+// 	constructor(animalType: string, animalSize: string) {
+// 		this.type = animalType;
+// 		this.size = animalSize;
+// 	}
+// 	animalInfo(animalType: string, animalSize: string): string {
+// 		return `type: ${animalType}, size: ${animalSize}`;
 // 	}
 // }
-// const tom: User = new User('Том');
-// const header = this.document.getElementById('header');
-// header.innerHTML = 'Привет ' + tom.name;
-// let age: number = 22;
-// let age:any = 22;
-// let age:string | number = 22;
-// console.log(age);
-// age = 'Hello'
-//
-// function mulpiplier(a: number, b: number): number {
-// 	return a * b;
-// }
-// function mulpiplier(a: number, b?: number): void {
-//   console.log(a * b);
-// }
-//
-// console.log(mulpiplier(10, 8));
-// //
-// // console.log(number);
-//
-// class Car {
-//   protected year: number;
-//   private producer: string;
-//   public power: number = 200;
-//
-//   constructor(year: number, producer: string) {
-//     this.year = year;
-//     this.producer = producer;
-//   }
-//
-//   protected changePower(newPower: number): void {
-//     this.power = newPower;
-//   }
-//
-//   private privateTest() {
-//     console.log('TEST')
-//   }
-// }
-//
-// class SuperCar extends Car {
-//   public color: string;
-//
-//   constructor(year: number, producer: string, color: string) {
-//     super(year, producer);
-//     this.color = color;
-//   }
-//
-//   changePower() {
-//
-//   }
-//
-//   privateTest() { // Will throw an error
-//
-//   }
-// }
-//
-// const car1 = new Car(2008, 'Vaz');
-// const superCar = new SuperCar(2000, 'Mazda', 'red');
-//
-// console.log(car1);
-// console.log(superCar);
-//
-// console.log(car1);
-// const user = {
-//   name: 'Viktor',
-//   laptop: {
-//     model: 'Dell',
-//     memory: 16
-//   },
-//   car: {
-//     year: 2007
-//   },
-//   bike: {
-//     price: 9999
-//   }
-// }
-//
-// // console.log(user && user.bike && user.bike.price && user.bike.price.currency);
-// console.log(user?.bike?.price?.currency); //Elvis
-// let names: string[] = ['Vova', 'Anton', 'Dimas'];
-// let names2: Array<string | number> = ['Vova', 'Anton', 'Dimas'];
-// // names = ['Khrystyna'];
-// // names = 33
-// // ENUM
-// enum EGenders {
-//   MALE = 'male',
-//   FEMALE = 'female',
-// }
-// interface ICar {
-//   color: string
-// }
-// interface IUser {
-//   age: number,
-//   name: string,
-//   gender: EGenders,
-//   wife?: boolean,
-//   cars?: [ICar],
-//   goWork: Function
-// }
-// function userLogger(users: Array<IUser>): void {
-//   users.forEach((user) => {
-//     user.cars?.forEach(car => { // Skip loop when array is not present
-//       console.log(car.color);
-//     })
-//   })
-// }
-// let ivan: IUser = {
-//   age: 22,
-//   name: 'Ivan',
-//   wife: false,
-//   gender: EGenders.MALE,
-//   goWork: () => {}
-// }
-// let viktor: Partial<IUser> = { // Important
-//   age: 25,
-//   name: 'Viktor'
-// }
-// userLogger([ivan]);
-// // KEYOF
-// const keys: Array<keyof IUser> = ["age", "cars", "goWork", "name", "wife"]
-// function getValueOfKey(key: keyof IUser): void {
-//   console.log(ivan[key])
-// }
-// getValueOfKey('wife')
-// // PROMISE example from smak.shop
-// // createTokenPair(tokenObject: Partial<IAccessToken>): Promise<IAccessToken> {
-// //   const tokensToCreate = new AccessTokenModel(tokenObject);
-// //
-// //   return tokensToCreate.save();
-// // }
-// // ABSTRACT CLASS
-// abstract class ACar {
-//   wheels: number;
-//   power: number;
-//   constructor(wheels: number, power: number) {
-//     this.wheels = wheels;
-//     this.power = power;
-//   }
-//   ride(): void {
-//     console.log(`Ride with ${this.power * 2} km\h`)
-//   }
-// }
-// // const car = new ACar()
-// class Car extends ACar{
-//   color: string = 'white';
-//   constructor(wheels: number, power: number, color?: string) {
-//     super(wheels, power);
-//   }
-// }
-// const bibizika = new Car(4, 100);
-// bibizika.ride();
-// клас Верховна рада
-// поля:
-// масив фракцій
-// методи:
-// додати\видалити фракцію
-// вивести всі фракції
-// вивести конкретну фракцію
-// додати\видалити депутата з фракції
-// вивести всіх хабарників фракції
-// вивести найбільшого хабарника у фрації
-// вивести найбільшого хабарника верховної ради
-// вивести фсіх депутатів фракції
-// metanit Функции как параметры других функций
-// function sum(x: number, y: number): number {
-// 	return x + y;
-// }
-// function multiply(a: number, b: number): number {
-// 	return a * b;
-// }
-// function mathOp(x: number, y: number, op: (a: number, b: number) => number): number {
-// 	return op(x, y);
-// }
-// console.log(mathOp(10, 20, sum)); // 30
-// console.log(mathOp(10, 20, multiply)); // 200
-// type Operation = (a: number, b: number) => number;
-// function mathOp(x: number, y: number, op: Operation): number {
-// 	return op(x, y);
-// }
-// let sum1: Operation = function(x: number, y: number): number {
-// 	return x - y;
-// };
-// console.log(mathOp(10, 20, sum1)); // 30
-// Стрелочные функции
-// function mathOp(x: number, y: number, operation: (a: number, b: number) => number): number {
-// 	let result = operation(x, y);
-// 	return result;
-// }
-// console.log(mathOp(10, 20, (x, y) => x + y)); // 30
-// console.log(mathOp(10, 20, (x, y) => x * y)); // 200
-// Объединения union
-// function printSentence(words: string[] | string) {
-// 	// если words - строка
-// 	if (typeof words === 'string') {
-// 		console.log(words);
-// 	} else {
-// 		// Если words - массив string[]
-// 		console.log(words.join(' '));
-// 	}
-// }
-// printSentence([ 'Язык', 'программирования', 'TypeScript' ]);
-// printSentence('Язык программирования JavaScript');
-// Объекты
-// function printUser(user: { name: string; age: number }) {
-// 	console.log(`name: ${user.name}  age: ${user.age}`);
-// }
-// let bob = { name: 'Bob', age: 44, isMarried: true };
-// printUser(bob);
-// массивы
-// function printUsers(users: readonly string[]) {
-//     for(const user of users){
-//         console.log(user);
-//     }
-// }
-// function usersToString(users: ReadonlyArray<string>): String{
-//     return users.join(", ");
-// }
-// const people: readonly string[]= ["Tom", "Bob", "Sam"];
-// printUsers(people);
-// console.log(usersToString(people));
-// Неопределенный набор и наполнение параметров
-// function sum(...args: number[]): number {
-// 	let result = 0;
-// 	for (let i = 0; i < args.length; i++) {
-// 		result += args[i];
-// 	}
-// 	return result;
-// }
-// const numbers = [ 1, 3, 5, 7, 9 ] as const;
-// let num = sum(...numbers);
-// console.log(num); // 18
-function sum(a, b) {
-    return a + b;
+// let cat = new Animal('run', 'middle');
+// console.log('тип cat: ', cat.type, ', размер cat: ', cat.size);
+// console.log(cat.animalInfo('run', 'middle'));
+// let bird = new Animal('fly', 'small');
+// console.log('тип bird: ', bird.type, ', тип bird: ', bird.size);
+// console.log(bird.animalInfo('run', 'small'));
+// let fish = new Animal('sweem', 'small');
+// console.log('тип fish: ', fish.type, ', тип fish: ', fish.size);
+// console.log(fish.animalInfo('sweem', 'small'));
+// 2) создать абстрактный класс Shape:
+// добавить абстрактные методы perimeter() и area()
+// создать два класса Triangle и Rectangle и унаследовать их от Shape
+// переопределить для каждого класса методы под ваши фигуры
+// кладем в массив экземпляры классов(количество может быть любым но мин 2)
+// проходимся циклом по нему и и высчитываем площадь для каждой фигуры
+var Shape = /** @class */ (function () {
+    function Shape() {
+    }
+    return Shape;
+}());
+var Rectangle = /** @class */ (function (_super) {
+    __extends(Rectangle, _super);
+    function Rectangle(width, height) {
+        var _this = _super.call(this) || this;
+        _this.width = width;
+        _this.height = height;
+        return _this;
+    }
+    Rectangle.prototype.perimetr = function () {
+        var rectanglePerimetr = this.width * 2 + this.height * 2;
+        return rectanglePerimetr;
+    };
+    Rectangle.prototype.area = function () {
+        var rectangleSquare = this.width * this.height;
+        return rectangleSquare;
+    };
+    return Rectangle;
+}(Shape));
+var SQTriangle = /** @class */ (function (_super) {
+    __extends(SQTriangle, _super);
+    function SQTriangle(width, height) {
+        var _this = _super.call(this) || this;
+        _this.width = width;
+        _this.height = height;
+        return _this;
+    }
+    SQTriangle.prototype.perimetr = function () {
+        var SQTrianglePerimetr = this.width + this.height + Math.sqrt(Math.pow(this.width, 2) + Math.pow(this.height, 2));
+        return SQTrianglePerimetr;
+    };
+    SQTriangle.prototype.area = function () {
+        var SQTriangleSquare = this.width * this.height / 2;
+        return SQTriangleSquare;
+    };
+    return SQTriangle;
+}(Shape));
+var figureRec1 = new Rectangle(3, 4);
+console.log('area=', figureRec1.area());
+console.log('perimeter=', figureRec1.perimetr());
+var figureTriag1 = new SQTriangle(3, 4);
+console.log('area=', figureTriag1.area());
+console.log('perimeter=', figureTriag1.perimetr());
+var figureRec2 = new Rectangle(5, 6);
+var figureRec3 = new Rectangle(10, 5);
+var sqArray = [figureRec1, figureRec2, figureRec3];
+for (var _i = 0, sqArray_1 = sqArray; _i < sqArray_1.length; _i++) {
+    var i = sqArray_1[_i];
+    console.log('area=', i.area());
 }
-var numbers = [1, 3];
-var num = sum.apply(void 0, numbers); // ! Ошибка - функция sum принимает только два параметра
-console.log(num); // 18
