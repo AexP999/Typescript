@@ -1,94 +1,65 @@
-// // HW
-// // 1) написать интерфейс Animal который описывает:
-// // тип движения животного(плавает, ходит, бегает) типа стринг
-// // что говорит тип стринг
-// // и функцию которая возвращает информацию о животном
-// // создать три класса Cat, Bird, Fish и имплементировать для каждого интерфейс Animal
-var Cat = /** @class */ (function () {
-    function Cat(animalType, animalSize) {
-        this.type = animalType;
-        this.size = animalSize;
+var Gender;
+(function (Gender) {
+    Gender["male"] = "male";
+    Gender["female"] = "female";
+})(Gender || (Gender = {}));
+var Deputate = /** @class */ (function () {
+    function Deputate(name, age, gender, honestyDegree, minBribe) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.honestyDegree = honestyDegree;
+        this.minBribe = minBribe;
     }
-    Cat.prototype.animalInfo = function () {
-        return "type: " + this.type + ", size: " + this.size;
-    };
-    return Cat;
+    return Deputate;
 }());
-var cat = new Cat('run', 'middle');
-console.log('тип cat: ', cat.type, ', размер cat: ', cat.size);
-console.log(cat.animalInfo());
-var Bird = /** @class */ (function () {
-    function Bird(animalType, animalSize) {
-        this.type = animalType;
-        this.size = animalSize;
+var deputateArray = [
+    {
+        name: 'Костюк Дмитро Сергійович',
+        age: 1993,
+        gender: Gender.male,
+        honestyDegree: 90,
+        minBribe: 10000
+    },
+    {
+        name: 'Абдуллін Олександр Рафкатович',
+        age: 1962,
+        gender: Gender.male,
+        honestyDegree: 50,
+        minBribe: 10000
+    },
+    {
+        name: 'Арєв Володимир Ігорович',
+        age: 1975,
+        gender: Gender.male,
+        honestyDegree: 50,
+        minBribe: 10000
+    },
+    {
+        name: 'Бардіна Марина Олегівна',
+        age: 1992,
+        gender: Gender.female,
+        honestyDegree: 50,
+        minBribe: 10000
     }
-    Bird.prototype.animalInfo = function () {
-        return "type: " + this.type + ", size: " + this.size;
-    };
-    return Bird;
-}());
-var bird = new Bird('fly', 'small');
-console.log('тип bird: ', bird.type, ', тип bird: ', bird.size);
-console.log(bird.animalInfo());
-var Fish = /** @class */ (function () {
-    function Fish(animalType, animalSize) {
-        this.type = animalType;
-        this.size = animalSize;
+];
+var dep1 = new Deputate(deputateArray[0].name, deputateArray[0].age, deputateArray[0].gender, deputateArray[0].honestyDegree, deputateArray[0].minBribe);
+console.log(dep1);
+// 2) Партія
+//    - назва
+//    - голова (Депутат)
+//    - члени партії (Масив депатутатів)
+var Party = /** @class */ (function () {
+    function Party() {
+        this.members = deputateArray;
     }
-    Fish.prototype.animalInfo = function () {
-        return "type: " + this.type + ", size: " + this.size;
-    };
-    return Fish;
+    return Party;
 }());
-var fish = new Fish('sweem', 'small');
-console.log('тип fish: ', fish.type, ', тип fish: ', fish.size);
-console.log(fish.animalInfo());
-// // 2) создать абстрактный класс Shape:
-// // добавить абстрактные методы perimeter() и area()
-// // создать два класса Triangle и Rectangle и унаследовать их от Shape
-// // переопределить для каждого класса методы под ваши фигуры
-// // кладем в массив экземпляры классов(количество может быть любым но мин 2)
-// // проходимся циклом по нему и и высчитываем площадь для каждой фигуры
-// abstract class Shape {
-// 	abstract perimetr(): number;
-// 	abstract area(): number;
-// }
-// class Rectangle extends Shape {
-// 	constructor(public width: number, public height: number) {
-// 		super();
-// 	}
-// 	perimetr(): number {
-// 		let rectanglePerimetr = this.width * 2 + this.height * 2;
-// 		return rectanglePerimetr;
-// 	}
-// 	area(): number {
-// 		let rectangleSquare = this.width * this.height;
-// 		return rectangleSquare;
-// 	}
-// }
-// class SQTriangle extends Shape {
-// 	constructor(public width: number, public height: number) {
-// 		super();
-// 	}
-// 	perimetr(): number {
-// 		let SQTrianglePerimetr =
-// 			this.width + this.height + Math.sqrt(this.width ** 2 + this.height ** 2);
-// 		return SQTrianglePerimetr;
-// 	}
-// 	area(): number {
-// 		let SQTriangleSquare = this.width * this.height / 2;
-// 		return SQTriangleSquare;
-// 	}
-// }
-// let figureRec1: Shape = new Rectangle(3, 4);
-// console.log('area=', figureRec1.area());
-// console.log('perimeter=', figureRec1.perimetr());
-// let figureTriag1: Shape = new SQTriangle(3, 4);
-// console.log('area=', figureTriag1.area());
-// console.log('perimeter=', figureTriag1.perimetr());
-// let figureRec2: Shape = new Rectangle(5, 6);
-// let figureRec3: Shape = new Rectangle(10, 5);
-// const sqArray = [ figureRec1, figureRec2, figureRec3 ];
-// for (const i of sqArray) {
-// 	console.log('area=', i.area());
-// }
+// 3) Верхрвна рада
+//    - масив партій
+//    - решті полів на вибір
+var Rada = /** @class */ (function () {
+    function Rada() {
+    }
+    return Rada;
+}());
